@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns="namespaceA"
+targetNamespace="namespaceA"
+elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="CountryData">
+        <xs:sequence>
+            <xs:element name="cityData" type="CityData" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CityData">
+        <xs:sequence>
+            <xs:element name="districtData" type="DistrictData" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DistrictData">
+        <xs:sequence>
+            <xs:element name="population" type="xs:int" nillable="false" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
